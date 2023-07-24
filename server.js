@@ -3,9 +3,9 @@ const app = express();
 const budget = require("./models/budget.js")
 
 
-app.get("/", (req, res) => {
+app.get("/budget", (req, res) => {
 
-    res.send("budget app ");
+    res.send(budget);
   });
   
 
