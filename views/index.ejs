@@ -21,7 +21,7 @@
         <% Budget.forEach((budgetItem, index) => { %>
           <tr>
             <td><%= budgetItem.date %></td>
-            <td><a href="/budgets/<%= index %>"><%= budgetItem.name %></a></td>
+            <td><a href="/budget/<%= index %>"><%= budgetItem.name %></a></td>
             <td><%= budgetItem.amount %></td>
           </tr>
         <% }); %>

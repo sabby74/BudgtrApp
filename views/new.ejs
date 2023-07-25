@@ -7,8 +7,8 @@
 </head>
 <body>
   <div class="container">
-    <h1>Add New Budget Item</h1>
-    <form action="/budgets/new" method="POST">
+    <h1>Add New Budget </h1>
+    <form action="/budgets/:id" method="POST">
       <label for="date">Date:</label>
       <input type="text" id="date" name="date" placeholder="e.g., April 15">
 
@@ -16,7 +16,7 @@
       <input type="text" id="name" name="name" placeholder="e.g., Income">
 
       <label for="from">From:</label>
-      <input type="text" id="from" name="from" placeholder="e.g., Company ABC">
+      <input type="text" id="from" name="from" placeholder="e.g., From Where">
 
       <label for="amount">Amount:</label>
       <input type="number" id="amount" name="amount" placeholder="e.g., 100">

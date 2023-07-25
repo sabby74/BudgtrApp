@@ -25,24 +25,42 @@ app.get("/budget", (req, res) => {
 });
 
 //Show
-app.get("/budgets/:index", (req, res) => {
+app.get("/budget/:index", (req, res) => {
   const { index } = req.params;
   const budgetItem = Budget[index];
   res.render("show.ejs", { budgetItem });
 });
 
 
-//New
-app.get("/budget/new", (req, res) => {
+//create
+app.get("/budgets/new", (req, res) => {
   res.render("new.ejs");
 });
 
-// app.post('/budget/new', (req, res) => {
-//     console.log(req.body);
-//     const newBudgetItem = req.body;
-//     Budget.push(newBudgetItem);
-//     res.redirect('index.ejs');
-//   });
+// app.post('/budgets/new', (req, res) => {
+    //     const newBudgetItem = req.body;
+    //     Budget.push(newBudgetItem);
+    //     res.redirect('index.ejs');
+    //   });
+    app.post("/budgets/:id", (req, res) => {
+        
+        let budgetToUpdate = {
+            // id: req.params.id,
+            ...req.body,
+        };
+        
+        for (let i = 0; i < Budget.length; i++) {
+            if (Budget[i].id == req.params.id) {
+                console.log("new budget added ");
+                console.log(req.body);
+            Budget[i] = budgetToUpdate;
+        }
+    }
+    Budget.push(budgetToUpdate);
+  
+    res.render("show.ejs",{budgetItem: budgetToUpdate});
+  });
+  
 
 app.listen(2000, () => {
   console.log("server is listening on port 2000");
