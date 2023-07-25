@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const app = express();
 const Budget = require("./models/budget.js")
+const expressEjsLayouts = require("express-ejs-layouts");
 
 //middlewares
 app.set("view engine", "ejs");
@@ -33,8 +34,23 @@ app.get('/budget/:index', (req, res) => {
     res.render('show.ejs', { budgetItem });
   });
 //New
+app.get('/budget/new', (req, res) => {
+    
 
-//Create
+    res.render("new.ejs");
+    
+  });
+
+
+app.post('/budget/new', (req, res) => {
+    console.log(req.body);
+    const newBudgetItem = req.body;
+    Budget.push(newBudgetItem);
+    res.redirect('index.ejs');
+  });
+
+
+
 
   app.listen(2000 ,() => {
     console.log("server is listening on port 2000");

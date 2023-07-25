@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Budget- New</title>
+  <link rel="stylesheet" href="/normalize.css">
+  <link rel="stylesheet" href="/skeleton.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Add New Budget Item</h1>
+    <form action="/budget" method="POST">
+      <label for="date">Date:</label>
+      <input type="text" id="date" name="date" placeholder="e.g., April 15">
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="e.g., Income">
+
+      <label for="from">From:</label>
+      <input type="text" id="from" name="from" placeholder="e.g., Company ABC">
+
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" name="amount" placeholder="e.g., 100">
+
+      <label for="amount">Tags:</label>
+      <input type="number" id="amount" name="tags" placeholder="e.g., coffee or credit card etc">
+
+      <input type="submit" value="Create">
+    </form>
+  </div>
+</body>
+</html>
