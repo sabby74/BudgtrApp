@@ -27,7 +27,11 @@ app.get("/budget", (req, res) => {
   
 
 //Show
-
+app.get('/budget/:index', (req, res) => {
+    const { index } = req.params;
+    const budgetItem = Budget[index];
+    res.render('show.ejs', { budgetItem });
+  });
 //New
 
 //Create

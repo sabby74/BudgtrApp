@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Budget App - Show</title>
+  <link rel="stylesheet" href="/normalize.css">
+  <link rel="stylesheet" href="/skeleton.css">
+</head>
+<body>
+  <div class="container">
+    <h1><%= budgetItem.name %></h1>
+    <button onclick="window.history.back();">Back</button>
+    <table>
+      <tr>
+        <td>Date:</td>
+        <td><%= budgetItem.date %></td>
+      </tr>
+      <tr>
+        <td>Name:</td>
+        <td><%= budgetItem.name %></td>
+      </tr>
+      <tr>
+        <td>From:</td>
+        <td><%= budgetItem.from %></td>
+      </tr>
+      <tr>
+        <td>Amount:</td>
+        <td><%= budgetItem.amount %></td>
+      </tr>
+      <tr>
+        <td>Tags:</td>
+        <td><%= budgetItem.tags%></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
